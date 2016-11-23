@@ -1,0 +1,29 @@
+<% include partials/header %>
+
+<div class="grid">
+  <div class="row">
+    <% pagination.files.forEach((work, index) => { %>
+
+      <% boxClass = index % 2 === 0 ? '' : 'with-hover-icon' %>
+      <% textClass = index % 2 === 0 ? 'box-masonry-hover-text-header' : 'box-masonry-text' %>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 masonry-item"> 
+        <div class="box-masonry">
+          <a href="/<%= work.path %>" class="box-masonry-image with-hover-overlay <%= boxClass %>">
+            <img src="<%= work.coverImage %>" class="img-responsive">
+          </a>
+          <div class="<%= textClass %>">
+            <h4><a href="/<%= work.path %>"><%= work.title %></a></h4>
+            <div class="box-masonry-desription">
+              <p><%= work.excerpt %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <% }) %>
+  </div>
+</div>
+
+<% include partials/footer %>
+

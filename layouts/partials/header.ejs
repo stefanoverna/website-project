@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="<%= sidebar.language %>">
+  <head>
+    <title><%= sidebar.name %></title>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/theme.css">
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row row-offcanvas row-offcanvas-left">
+        <div class="col-xs-6 col-sm-4 col-md-3 sidebar-offcanvas">
+
+          <div class="sidebar">
+            <h1 class="sidebar-heading">
+              <a href="/index.html"><%= sidebar.name %></a>
+            </h1>
+
+            <div class="sidebar-intro">
+              <%- markdown(sidebar.intro) %>
+            </div>
+
+            <ul class="sidebar-menu">
+              <li class="is-active">
+                <a href="index.html">Home</a>
+              </li>
+              <li>
+                <a href="about.html">About</a>
+              </li>
+              <li>
+                <a href="contact.html">Get in touch</a>
+              </li>
+            </ul>
+
+            <p class="social">
+              <% sidebar.socialProfiles.forEach(profile => { %>
+                <a href="<%= profile.url %>" data-animate-hover="pulse" class="external <%= profile.type %>">
+                  <% icon = profile.type === 'email' ? 'envelope' : profile.type %>
+                  <i class="fa fa-<%= icon %>"></i>
+                </a>
+              <% }) %>
+            </p>
+
+            <div class="copyright">
+              <%= sidebar.copyright %>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-9 content-column">
