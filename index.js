@@ -6,22 +6,29 @@ const markdown = require('metalsmith-markdown')
 const collections = require('metalsmith-collections')
 const watch = require('metalsmith-watch')
 const serve = require('metalsmith-serve')
+const msIf = require('metalsmith-if');
 const marked = require('marked');
 const sortBy = require('sort-by');
+
+const isDevelopment = process.argv[2] === 'dev';
 
 Metalsmith(__dirname)
   .source('./src')
   .destination('./build')
-  .use(serve())
-  .use(
+  .use(msIf(
+    isDevelopment,
+    serve()
+  ))
+  .use(msIf(
+    isDevelopment,
     watch({
       paths: {
         "src/**/*": "**/*",
         "layouts/**/*": "**/*",
       },
-      livereload: true,
+      livereload: isDevelopment,
     })
-  )
+  ))
   .use(metadata({
     sidebar: 'data/sidebar.yml'
   }))

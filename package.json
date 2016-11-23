@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "build": "dato dump && node index.js",
+    "start": "node index.js dev"
+  },
   "dependencies": {
     "datocms-client": "^0.3.4",
     "ejs": "^2.5.2",
     "marked": "^0.3.6",
     "metalsmith": "^2.3.0",
     "metalsmith-collections": "^0.9.0",
+    "metalsmith-if": "^0.1.1",
     "metalsmith-layouts": "^1.7.0",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-metadata": "^0.0.4",

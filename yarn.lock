@@ -817,6 +817,12 @@ metalsmith-filenames@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/metalsmith-filenames/-/metalsmith-filenames-1.0.0.tgz#df4e69f246b8325bb9189e0273d2ee70899d00de"
 
+metalsmith-if:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/metalsmith-if/-/metalsmith-if-0.1.1.tgz#e6dd9f18ba6562bc2fadfddd1fc38ce5319d3fae"
+  dependencies:
+    debug "^2.2.0"
+
 metalsmith-layouts:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/metalsmith-layouts/-/metalsmith-layouts-1.7.0.tgz#00473416435a82c8a8bfa248e9e8858a82d60772"
